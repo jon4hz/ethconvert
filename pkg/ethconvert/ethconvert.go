@@ -6,6 +6,7 @@ import (
 	"github.com/shopspring/decimal"
 )
 
+// ErrInvalidUnit is returned when the given unit is not supported.
 var ErrInvalidUnit = fmt.Errorf("invalid unit")
 
 func init() {
@@ -13,6 +14,7 @@ func init() {
 	decimal.DivisionPrecision = 18
 }
 
+// Convert converts the given amount from the given unit to the given unit.
 func Convert(input decimal.Decimal, inputUnit string, outputUnit string) (decimal.Decimal, error) {
 	wei, err := ToWei(input, inputUnit)
 	if err != nil {

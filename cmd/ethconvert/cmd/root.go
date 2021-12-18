@@ -52,6 +52,7 @@ func init() {
 	ethconvert 4.2 ether wei`
 }
 
+// Execute executes the root command.
 func Execute() error {
 	return rootCmd.Execute()
 }
